@@ -21,7 +21,7 @@ start() {
 	PORT=$(config_t_get global port 8088)
 	ROOT_PATH=$(config_t_get global root_path /)
 	project_directory=$(config_t_get global project_directory /tmp)
-	[ ! -f "$project_directory/filebrowser" ] && echolog "在$project_directory找不到FileBrowser主程序，请下载。" && exit
+	[ ! -f "$project_directory/filebrowser" ] && echolog "FileBrowser main program cannot be found in $project_directory, please download it." && exit
 	export HOME="/root"
 	$project_directory/filebrowser -a 0.0.0.0 -p $PORT -r $ROOT_PATH -d ${ROOT_PATH}filebrowser.db -l $LOG_PATH >/dev/null 2>&1 &
 }
